@@ -1,108 +1,188 @@
-****************************TestLoginWithInvalidCredentials****************************
-[19:36:10.100] Test Initialized: Test Login With Invalid Credentials
-[19:36:10.101] Test Setup - WebDriver initialized and test started
-[19:36:10.150] Opening Login Page - Navigating to: https://www.example.com/login
-[19:36:10.200] Entering invalid credentials
-[19:36:10.250] Login attempt failed: Invalid username or password
-[19:36:10.300] Error Type: AuthenticationException
-[19:36:10.301] Error Message: Invalid credentials provided
-[19:36:10.350] WebDriver Cleanup - Closing browser session
+***********************************Current Scenario : AMAZON_FULL_E2E_USER_JOURNEY***********************************
+***********************************Current Test Case : TC_AMZ_200_Complete_Order_Flow_With_Profile_Update***********************************
+***********************************Current Test Instance : Instance1***********************************
 
-****************************TestTimeoutError****************************
-[19:36:20.400] Test Initialized: Test Timeout Error
-[19:36:20.401] Test Setup - WebDriver initialized and test started
-[19:36:20.450] Opening Page - Navigating to: https://www.example.com/timeout
-[19:36:20.500] TimeoutException: Page load timed out after 30 seconds
-[19:36:20.550] WebDriver Cleanup - Closing browser session
+***********************************Invoking Business Component : launchAmazonURL***********************************
+02-Sep-2025 10:25:01 AM IST : Launching the Amazon URL
+02-Sep-2025 10:25:01 AM IST : Environment: Production
+02-Sep-2025 10:25:01 AM IST : URL : https://www.amazon.com/
+02-Sep-2025 10:25:01 AM IST : Launching URL : https://www.amazon.com/
+02-Sep-2025 10:25:03 AM IST : Navigated to Amazon homepage successfully
 
-****************************TestSuccessWithAIRecommendation****************************
-[19:36:30.600] Test Initialized: Test Success With AI Recommendation
-[19:36:30.601] Test Setup - WebDriver initialized and test started
-[19:36:30.650] Opening Dashboard - Navigating to: https://www.example.com/dashboard
-[19:36:30.700] Dashboard loaded successfully
-[19:36:30.750] 🤖 AI Recommendation: Consider optimizing dashboard widgets for faster load times.
-[19:36:30.800] WebDriver Cleanup - Closing browser session
+***********************************Invoking Business Component : loginToAmazonAccount***********************************
+02-Sep-2025 10:25:03 AM IST : Clicking on 'Sign in' link in navigation bar
+02-Sep-2025 10:25:03 AM IST : Click Attempt : 1 on element By.id: nav-link-accountList
+02-Sep-2025 10:25:04 AM IST : Click Attempted
+02-Sep-2025 10:25:04 AM IST : Entering username: 'automation_user_01'
+02-Sep-2025 10:25:04 AM IST : Setting text on element : By.id: ap_email
+02-Sep-2025 10:25:05 AM IST : Clicking on 'Continue' button
+02-Sep-2025 10:25:05 AM IST : Click Attempt : 1 on element By.id: continue
+02-Sep-2025 10:25:05 AM IST : Click Attempted
+02-Sep-2025 10:25:05 AM IST : Entering password: 'password123'
+02-Sep-2025 10:25:06 AM IST : Setting text on element : By.id: ap_password
+02-Sep-2025 10:25:06 AM IST : Clicking on 'Sign in' button
+02-Sep-2025 10:25:06 AM IST : Click Attempt : 1 on element By.id: signInSubmit
+02-Sep-2025 10:25:07 AM IST : Click Attempted
+02-Sep-2025 10:25:07 AM IST : Login successful.
 
-****************************TestNetworkError****************************
-[19:36:40.900] Test Initialized: Test Network Error
-[19:36:40.901] Test Setup - WebDriver initialized and test started
-[19:36:40.950] Opening Reports - Navigating to: https://www.example.com/reports
-[19:36:41.000] NetworkException: Failed to fetch reports due to network error
-[19:36:41.050] WebDriver Cleanup - Closing browser session
+***********************************Invoking Business Component : searchForProduct***********************************
+02-Sep-2025 10:25:08 AM IST : Entering search term: 'Wireless Headphones'
+02-Sep-2025 10:25:08 AM IST : Setting text on element : By.id: twotabsearchtextbox
+02-Sep-2025 10:25:09 AM IST : Clicking on search button
+02-Sep-2025 10:25:09 AM IST : Click Attempt : 1 on element By.id: nav-search-submit-button
+02-Sep-2025 10:25:10 AM IST : Click Attempted
+02-Sep-2025 10:25:10 AM IST : Search results page loaded successfully.
 
-****************************TestSuccessCase2****************************
-[19:36:50.100] Test Initialized: Test Success Case 2
-[19:36:50.101] Test Setup - WebDriver initialized and test started
-[19:36:50.150] Opening Profile - Navigating to: https://www.example.com/profile
-[19:36:50.200] Profile loaded successfully
-[19:36:50.250] WebDriver Cleanup - Closing browser session
+***********************************Invoking Business Component : applyFilters***********************************
+02-Sep-2025 10:25:11 AM IST : Applying filter for 'Brand: Bose'
+02-Sep-2025 10:25:11 AM IST : Click Attempt : 1 on element By.xpath: //a[@data-csa-c-element-id='filter-brand']/span[contains(text(),'Bose')]
+02-Sep-2025 10:25:12 AM IST : Click Attempted
+02-Sep-2025 10:25:12 AM IST : Filter results loaded.
+02-Sep-2025 10:25:13 AM IST : Applying filter for 'Customer Reviews: 4 Stars & Up'
+02-Sep-2025 10:25:13 AM IST : Click Attempt : 1 on element By.xpath: //a[@data-csa-c-element-id='filter-reviews']/span[contains(text(),'4 Stars & Up')]
+02-Sep-2025 10:25:14 AM IST : Click Attempted
+02-Sep-2025 10:25:14 AM IST : Filter results loaded successfully.
 
-****************************TestLogoutowWithSessionTimeout****************************
-[19:37:00.300] Test Initialized: Test Logout Flow With Session Timeout
-[19:37:00.301] Test Setup - WebDriver initialized and test started
-[19:37:00.350] Opening Logout Page - Navigating to: https://www.example.com/logout
-[19:37:00.400] Session expired before logout could complete
-[19:37:00.450] Error Type: SessionTimeoutException
-[19:37:00.451] Error Message: User session timed out during logout
-[19:37:00.500] WebDriver Cleanup - Closing browser session
+***********************************Invoking Business Component : selectProduct***********************************
+02-Sep-2025 10:25:15 AM IST : Selecting the first product from the search results
+02-Sep-2025 10:25:15 AM IST : Click Attempt : 1 on element By.xpath: //div[@data-index='2']//h2/a
+02-Sep-2025 10:25:16 AM IST : Click Attempted
+02-Sep-2025 10:25:16 AM IST : Product details page loaded successfully.
 
-****************************TestPasswordsetSuccess****************************
-[19:37:10.500] Test Initialized: Test Password Reset Success
-[19:37:10.501] Test Setup - WebDriver initialized and test started
-[19:37:10.550] Opening Password Reset Page - Navigating to: https://www.example.com/reset
-[19:37:10.600] New password set successfully
-[19:37:10.650] WebDriver Cleanup - Closing browser session
+***********************************Invoking Business Component : addToCart***********************************
+02-Sep-2025 10:25:17 AM IST : Clicking on 'Add to Cart' button
+02-Sep-2025 10:25:17 AM IST : Click Attempt : 1 on element By.id: add-to-cart-button
+02-Sep-2025 10:25:18 AM IST : Click Attempted
+02-Sep-2025 10:25:18 AM IST : Verifying 'Added to Cart' confirmation message
+02-Sep-2025 10:25:18 AM IST : Confirmation message displayed successfully.
 
-*****************************TestFileloadValidationError****************************
-[19:37:20.700] Test Initialized: Test File Upload Validation Error
-[19:37:20.701] Test Setup - WebDriver initialized and test started
-[19:37:20.750] Opening Upload Page - Navigating to: https://www.example.com/upload
-[19:37:20.800] Attempting to upload unsupported file type (.exe)
-[19:37:20.850] FileValidationException: Unsupported file type selected
-[19:37:20.900] WebDriver Cleanup - Closing browser session
+***********************************Invoking Business Component : navigateToCartPage***********************************
+02-Sep-2025 10:25:19 AM IST : Clicking on 'Cart' icon in the navigation bar
+02-Sep-2025 10:25:19 AM IST : Click Attempt : 1 on element By.id: nav-cart
+02-Sep-2025 10:25:20 AM IST : Click Attempted
+02-Sep-2025 10:25:20 AM IST : Cart page loaded successfully.
 
-****************************TestDashboardadSuccess****************************
-[19:37:30.900] Test Initialized: Test Dashboard Load Success
-[19:37:30.901] Test Setup - WebDriver initialized and test started
-[19:37:30.950] Opening Dashboard - Navigating to: https://www.example.com/dashboard
-[19:37:31.000] Dashboard loaded successfully
-[19:37:31.050] WebDriver Cleanup - Closing browser session
+***********************************Invoking Business Component : updateCartQuantity***********************************
+02-Sep-2025 10:25:21 AM IST : Updating quantity to '2'
+02-Sep-2025 10:25:21 AM IST : Click Attempt : 1 on element By.name: quantity
+02-Sep-2025 10:25:21 AM IST : Click Attempted
+02-Sep-2025 10:25:22 AM IST : Selected quantity '2'
+02-Sep-2025 10:25:22 AM IST : Cart updated successfully.
 
-****************************TestEmailtificationFailure****************************
-[19:37:40.100] Test Initialized: Test Email Notification Failure
-[19:37:40.101] Test Setup - WebDriver initialized and test started
-[19:37:40.150] Sending notification email to user@example.com
-[19:37:40.200] EmailSendException: SMTP server not reachable
-[19:37:40.250] WebDriver Cleanup - Closing browser session
-[19:37:40.100] Test Initialized: Test Email Notification Failure
-[19:37:40.101] Test Setup - WebDriver initialized and test started
-[19:37:40.150] Sending notification email to user@example.com
-[19:37:40.200] EmailSendException: SMTP server not reachable
-[19:37:40.250] WebDriver Cleanup - Closing browser session
-[19:37:40.100] Test Initialized: Test Email Notification Failure
-[19:37:40.101] Test Setup - WebDriver initialized and test started
-[19:37:40.150] Sending notification email to user@example.com
-[19:37:40.200] EmailSendException: SMTP server not reachable
-[19:37:40.250] WebDriver Cleanup - Closing browser session
-[19:37:40.100] Test Initialized: Test Email Notification Failure
-[19:37:40.101] Test Setup - WebDriver initialized and test started
-[19:37:40.150] Sending notification email to user@example.com
-[19:37:40.200] EmailSendException: SMTP server not reachable
-[19:37:40.250] WebDriver Cleanup - Closing browser session
-[19:37:40.100] Test Initialized: Test Email Notification Failure
-[19:37:40.101] Test Setup - WebDriver initialized and test started
-[19:37:40.150] Sending notification email to user@example.com
-[19:37:40.200] EmailSendException: SMTP server not reachable
-[19:37:40.250] WebDriver Cleanup - Closing browser session
-[19:37:40.100] Test Initialized: Test Email Notification Failure
-[19:37:40.101] Test Setup - WebDriver initialized and test started
-[19:37:40.150] Sending notification email to user@example.com
-[19:37:40.200] EmailSendException: SMTP server not reachable
-[19:37:40.250] WebDriver Cleanup - Closing browser session
+***********************************Invoking Business Component : proceedToCheckout***********************************
+02-Sep-2025 10:25:23 AM IST : Clicking on 'Proceed to checkout' button
+02-Sep-2025 10:25:23 AM IST : Click Attempt : 1 on element By.name: proceedToCheckout
+02-Sep-2025 10:25:24 AM IST : Click Attempted
+02-Sep-2025 10:25:24 AM IST : Checkout page loaded successfully.
 
-****************************TestProfiledateSuccess****************************
-[19:37:50.300] Test Initialized: Test Profile Update Success
-[19:37:50.301] Test Setup - WebDriver initialized and test started
-[19:37:50.350] Opening Profile Settings - Navigating to: https://www.example.com/profile/settings
-[19:37:50.400] Profile information updated successfully
-[19:37:50.450] WebDriver Cleanup - Closing browser session
+***********************************Invoking Business Component : selectShippingAddress***********************************
+02-Sep-2025 10:25:25 AM IST : Selecting shipping address
+02-Sep-2025 10:25:25 AM IST : Click Attempt : 1 on element By.id: address-select-button
+02-Sep-2025 10:25:26 AM IST : Click Attempted
+02-Sep-2025 10:25:26 AM IST : Address selected.
+
+***********************************Invoking Business Component : selectPaymentMethod***********************************
+02-Sep-2025 10:25:27 AM IST : Selecting payment method
+02-Sep-2025 10:25:27 AM IST : An unexpected pop-up is covering the 'select payment' radio button.
+02-Sep-2025 10:25:27 AM IST : org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=138.0.7204.169)
+02-Sep-2025 10:25:28 AM IST : Test failed due to element not being interactable.
+
+***********************************Invoking Business Component : reviewOrderDetails***********************************
+02-Sep-2025 10:25:29 AM IST : Verifying order summary before placing the order
+02-Sep-2025 10:25:29 AM IST : The total from the UI is: $299.99
+02-Sep-2025 10:25:29 AM IST : Expected total from data file is: $300.99
+02-Sep-2025 10:25:30 AM IST : java.lang.AssertionError: expected [$300.99] but found [$299.99]
+02-Sep-2025 10:25:30 AM IST : Order total validation failed. Test aborted.
+
+***********************************Invoking Business Component : placeTheOrder***********************************
+02-Sep-2025 10:25:31 AM IST : Clicking on 'Place your order' button
+02-Sep-2025 10:25:31 AM IST : The variable 'placeOrderButton' is null. Cannot perform click action.
+02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke 'org.openqa.selenium.WebElement.click()' because 'placeOrderButton' is null
+02-Sep-2025 10:25:32 AM IST : Test failed due to Null Pointer Exception.
+
+02-Sep-2025 10:25:31 AM IST : Clicking on 'Place your order' button
+02-Sep-2025 10:25:31 AM IST : The variable 'placeOrderButton' is null. Cannot perform click action.
+02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke 'org.openqa.selenium.WebElement.click()' because 'placeOrderButton' is null
+02-Sep-2025 10:25:32 AM IST : Test failed due to Null Pointer Exception.
+
+
+02-Sep-2025 10:25:31 AM IST : Clicking on 'Place your order' button
+02-Sep-2025 10:25:31 AM IST : The variable 'placeOrderButton' is null. Cannot perform click action.
+02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke 'org.openqa.selenium.WebElement.click()' because 'placeOrderButton' is null
+02-Sep-2025 10:25:32 AM IST : Test failed due to Null Pointer Exception.
+
+
+02-Sep-2025 10:25:31 AM IST : Clicking on 'Place your order' button
+02-Sep-2025 10:25:31 AM IST : The variable 'placeOrderButton' is null. Cannot perform click action.
+02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke 'org.openqa.selenium.WebElement.click()' because 'placeOrderButton' is null
+02-Sep-2025 10:25:32 AM IST : Test failed due to Null Pointer Exception.
+
+
+02-Sep-2025 10:25:31 AM IST : Clicking on 'Place your order' button
+02-Sep-2025 10:25:31 AM IST : The variable 'placeOrderButton' is null. Cannot perform click action.
+02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke 'org.openqa.selenium.WebElement.click()' because 'placeOrderButton' is null
+02-Sep-2025 10:25:32 AM IST : Test failed due to Null Pointer Exception.
+
+
+***********************************Invoking Business Component : verifyOrderConfirmationPage***********************************
+02-Sep-2025 10:25:33 AM IST : Verifying order confirmation page title
+02-Sep-2025 10:25:33 AM IST : Waiting for element to be visible: By.xpath: //h4[contains(text(),'Order placed')]
+02-Sep-2025 10:25:40 AM IST : Element is not visible on the page.
+02-Sep-2025 10:25:40 AM IST : org.openqa.selenium.ElementNotVisibleException: element not visible
+  (Session info: chrome=138.0.7204.169)
+02-Sep-2025 10:25:40 AM IST : Test failed due to Element Not Visible Exception.
+
+***********************************Invoking Business Component : navigateToOrderHistory***********************************
+02-Sep-2025 10:25:41 AM IST : Clicking on 'Orders' link
+02-Sep-2025 10:25:41 AM IST : Click Attempt : 1 on element By.id: nav-orders
+02-Sep-2025 10:25:42 AM IST : Click Attempted
+02-Sep-2025 10:25:42 AM IST : Order history page loaded successfully.
+
+***********************************Invoking Business Component : trackRecentOrder***********************************
+02-Sep-2025 10:25:43 AM IST : Clicking on 'Track package' for the most recent order
+02-Sep-2025 10:25:43 AM IST : Click Attempt : 1 on element By.xpath: //div[@data-order-id][1]//a[contains(text(),'Track package')]
+02-Sep-2025 10:25:44 AM IST : Click Attempted
+02-Sep-2025 10:25:44 AM IST : Order tracking page loaded successfully.
+
+***********************************Invoking Business Component : navigateToProfileSettings***********************************
+02-Sep-2025 10:25:45 AM IST : Clicking on 'Account & Lists' dropdown
+02-Sep-2025 10:25:45 AM IST : Click Attempt : 1 on element By.id: nav-link-accountList
+02-Sep-2025 10:25:46 AM IST : Click Attempted
+02-Sep-2025 10:25:46 AM IST : Clicking on 'Your Account' link
+02-Sep-2025 10:25:46 AM IST : Click Attempt : 1 on element By.xpath: //div[@id='nav-al-container']//a[contains(text(),'Your Account')]
+02-Sep-2025 10:25:47 AM IST : Click Attempted
+02-Sep-2025 10:25:47 AM IST : Profile settings page loaded successfully.
+
+***********************************Invoking Business Component : updateProfileDetails***********************************
+02-Sep-2025 10:25:48 AM IST : Clicking on 'Login & security' link
+02-Sep-2025 10:25:48 AM IST : Click Attempt : 1 on element By.xpath: //a[@data-csa-c-element-id='ap_security_and_login_button']
+02-Sep-2025 10:25:49 AM IST : Click Attempted
+02-Sep-2025 10:25:49 AM IST : Login & security page loaded successfully.
+02-Sep-2025 10:25:50 AM IST : Attempting to edit name
+02-Sep-2025 10:25:50 AM IST : Click Attempt : 1 on element By.id: edit-name-button
+02-Sep-2025 10:25:51 AM IST : Click Attempted
+02-Sep-2025 10:25:51 AM IST : Updating name to 'Automation User'
+02-Sep-2025 10:25:52 AM IST : Setting text on element : By.id: ap_name
+02-Sep-2025 10:25:52 AM IST : Name updated successfully.
+
+***********************************Invoking Business Component : navigateToReturnsCenter***********************************
+02-Sep-2025 10:25:53 AM IST : Clicking on 'Returns & Orders' link
+02-Sep-2025 10:25:53 AM IST : Click Attempt : 1 on element By.id: nav-orders
+02-Sep-2025 10:25:54 AM IST : Click Attempted
+02-Sep-2025 10:25:54 AM IST : Navigated to returns center.
+
+***********************************Invoking Business Component : initiateReturnProcess***********************************
+02-Sep-2025 10:25:55 AM IST : Selecting most recent order for return
+02-Sep-2025 10:25:55 AM IST : Click Attempt : 1 on element By.xpath: //div[@data-order-id][1]//a[contains(text(),'Return or replace items')]
+02-Sep-2025 10:25:56 AM IST : Click Attempted
+02-Sep-2025 10:25:56 AM IST : Return details page loaded.
+
+***********************************Invoking Business Component : logoutFromAmazon***********************************
+02-Sep-2025 10:25:57 AM IST : Clicking on 'Account & Lists' dropdown
+02-Sep-2025 10:25:57 AM IST : Click Attempt : 1 on element By.id: nav-link-accountList
+02-Sep-2025 10:25:58 AM IST : Click Attempted
+02-Sep-2025 10:25:58 AM IST : Clicking on 'Sign Out' link
+02-Sep-2025 10:25:58 AM IST : Click Attempt : 1 on element By.xpath: //a[contains(text(),'Sign Out')]
+02-Sep-2025 10:25:59 AM IST : Click Attempted
+02-Sep-2025 10:25:59 AM IST : User signed out successfully.
