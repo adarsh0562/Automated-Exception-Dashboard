@@ -70,7 +70,6 @@ public class SimpleDashboardGenerator {
             
             while ((line = reader.readLine()) != null) {
                 if (line.contains(TESTCASE_PREFIX)) {
-                    // Extract test case name and trim all trailing asterisks
                     testCaseName = line.substring(line.indexOf(TESTCASE_PREFIX) + TESTCASE_PREFIX.length()).trim();
                     while (testCaseName.endsWith("*")) {
                         testCaseName = testCaseName.substring(0, testCaseName.length() - 1);
@@ -88,7 +87,6 @@ public class SimpleDashboardGenerator {
                             passedKeywords++;
                         }
                     }
-                    // Extract keyword name and trim all trailing asterisks
                     keywordName = line.substring(line.indexOf(KEYWORD_PREFIX) + KEYWORD_PREFIX.length()).trim();
                     while (keywordName.endsWith("*")) {
                         keywordName = keywordName.substring(0, keywordName.length() - 1);
@@ -212,7 +210,7 @@ public class SimpleDashboardGenerator {
                 "        <div class=\"flex justify-center mb-6\">\n" +
                 "            <img src=\"https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg\" alt=\"Logo\" class=\"h-20 w-20 rounded-full shadow-lg border-2 border-white bg-white p-1\">\n" +
                 "        </div>\n" +
-                "        <h1 class=\"text-4xl font-bold text-center text-purple-700 dark:text-purple-400 mb-2\">Test Automation Report</h1>\n" +
+                "        <h1 class=\"text-4xl font-bold text-center text-purple-700 dark:text-purple-400 mb-2\">Automation Exception Dashboard</h1>\n" +
                 "        <h2 class=\"text-xl font-bold text-center text-gray-600 dark:text-gray-400 mb-8\">Test Case: {{TEST_CASE_NAME}}</h2>\n" +
                 "        <div class=\"grid grid-cols-1 md:grid-cols-3 gap-6 mb-8\">\n" +
                 "            <div class=\"bg-gradient-to-tr from-cyan-200 via-blue-400 to-blue-600 rounded-lg shadow-xl p-4 flex flex-col items-center transform hover:scale-105 transition duration-200 fade-in\">\n" +
@@ -253,6 +251,9 @@ public class SimpleDashboardGenerator {
                 "            </table>\n" +
                 "        </div>\n" +
                 "    </div>\n" +
+                "    <footer class=\"mt-8 text-center text-gray-500 dark:text-gray-400 text-sm\">\n" +
+                "        <p>Developed by Adarsh Raj (Associate - 2393658)</p>\n" +
+                "    </footer>\n" +
                 "    <div id=\"logModal\" class=\"fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden fade-in px-4\">\n" +
                 "        <div class=\"bg-white dark:bg-gray-800 rounded-lg shadow-lg w-full max-w-3xl overflow-y-auto min-h-[40vh] max-h-[100vh] pop flex flex-col\">\n" +
                 "            <div class=\"flex justify-between items-start border-b px-6 py-4 bg-purple-600 dark:bg-purple-900 rounded-t-lg\">\n" +
