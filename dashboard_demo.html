@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Failure Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .fade-in {animation: fadeIn 1s;}
+        @keyframes fadeIn {from {opacity: 0;} to {opacity: 1;}}
+        .pop {animation: popAnim 0.4s;}
+        @keyframes popAnim {0% {transform: scale(0.8); opacity: 0;} 100% {transform: scale(1); opacity: 1;}}
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+<div class="flex justify-end mb-4 px-4 pt-4">
+    <button id="themeToggleBtn" aria-label="Toggle dark mode" 
+            class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+        Light Mode
+    </button>
+</div>
+    <div class="max-w-6xl mx-auto py-8 px-4">
+        <div class="flex justify-center mb-6">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo" class="h-20 w-20 rounded-full shadow-lg border-2 border-white bg-white p-1">
+        </div>
+        <h1 class="text-4xl font-bold text-center text-purple-700 dark:text-purple-400 mb-2">Test Automation Report</h1>
+        <h2 class="text-xl font-bold text-center text-gray-600 dark:text-gray-400 mb-8">Test Case: TC_AMZ_200_Complete_Order_Flow_With_Profile_Update</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="bg-gradient-to-tr from-cyan-200 via-blue-400 to-blue-600 rounded-lg shadow-xl p-4 flex flex-col items-center transform hover:scale-105 transition duration-200 fade-in">
+                <div class="text-3xl">🧮</div>
+                <div class="text-2xl font-bold text-white" id="totalTests">21</div>
+                <div class="text-white font-semibold">Total Tests</div>
+            </div>
+            <div class="bg-gradient-to-tr from-green-200 via-green-500 to-emerald-500 rounded-lg shadow-xl p-6 flex flex-col items-center transform hover:scale-105 transition duration-200 fade-in">
+                <div class="text-3xl">✔️</div>
+                <div class="text-2xl font-bold text-white" id="passedTests">17</div>
+                <div class="text-white font-semibold">Passed</div>
+            </div>
+            <div class="bg-gradient-to-tr from-pink-200 via-red-400 to-red-500 rounded-lg shadow-xl p-6 flex flex-col items-center transform hover:scale-105 transition duration-200 fade-in">
+                <div class="text-3xl">❌</div>
+                <div class="text-2xl font-bold text-white" id="failedTests">4</div>
+                <div class="text-white font-semibold">Failed</div>
+            </div>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 mb-8 flex justify-center">
+            <canvas id="failureChart" width="150" height="150"></canvas>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 fade-in">
+            <div class="flex justify-between items-center border-b px-6 py-4 bg-purple-600 rounded-t-lg">
+                <h2 class="text-xl font-bold text-white"> Failure Analysis</h2>
+            </div>
+            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                <thead class="bg-blue-100 dark:bg-blue-900">
+                    <tr>
+                        <th class="px-4 py-2 text-left text-xs font-semibold text-blue-700 dark:text-blue-200">Sn</th>
+                        <th class="px-4 py-2 text-left text-xs font-semibold text-blue-700 dark:text-blue-200">Keyword Name</th>
+                        <th class="px-4 py-2 text-left text-xs font-semibold text-blue-700 dark:text-blue-200">Error Summary</th>
+                        <th class="px-4 py-2 text-left text-xs font-semibold text-blue-700 dark:text-blue-200">Details</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                    <tr><td class='px-4 py-2'>1</td><td class='px-4 py-2 font-medium text-blue-700'>selectPaymentMethod</td><td class='px-4 py-2 text-red-600'>02-Sep-2025 10:25:27 AM IST : org.openqa.selenium.ElementNotInteractableException: element not interactable</td><td class='px-4 py-2'><button class='bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition pop' onclick="showModal('selectPaymentMethod', '***********************************Invoking Business Component : selectPaymentMethod***********************************\n02-Sep-2025 10:25:27 AM IST : Selecting payment method\n02-Sep-2025 10:25:27 AM IST : An unexpected pop-up is covering the \'select payment\' radio button.\n02-Sep-2025 10:25:27 AM IST : org.openqa.selenium.ElementNotInteractableException: element not interactable\n  (Session info: chrome=138.0.7204.169)\n02-Sep-2025 10:25:28 AM IST : Test failed due to element not being interactable.\n\n')">View</button></td></tr><tr><td class='px-4 py-2'>2</td><td class='px-4 py-2 font-medium text-blue-700'>reviewOrderDetails</td><td class='px-4 py-2 text-red-600'>02-Sep-2025 10:25:30 AM IST : java.lang.AssertionError: expected [$300.99] but found [$299.99]</td><td class='px-4 py-2'><button class='bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition pop' onclick="showModal('reviewOrderDetails', '***********************************Invoking Business Component : reviewOrderDetails***********************************\n02-Sep-2025 10:25:29 AM IST : Verifying order summary before placing the order\n02-Sep-2025 10:25:29 AM IST : The total from the UI is: $299.99\n02-Sep-2025 10:25:29 AM IST : Expected total from data file is: $300.99\n02-Sep-2025 10:25:30 AM IST : java.lang.AssertionError: expected [$300.99] but found [$299.99]\n02-Sep-2025 10:25:30 AM IST : Order total validation failed. Test aborted.\n\n')">View</button></td></tr><tr><td class='px-4 py-2'>3</td><td class='px-4 py-2 font-medium text-blue-700'>placeTheOrder</td><td class='px-4 py-2 text-red-600'>02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke &#39;org.openqa.selenium.WebElement.click()&#39; because &#39;placeOrderButton&#39; is null</td><td class='px-4 py-2'><button class='bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition pop' onclick="showModal('placeTheOrder', '***********************************Invoking Business Component : placeTheOrder***********************************\n02-Sep-2025 10:25:31 AM IST : Clicking on \'Place your order\' button\n02-Sep-2025 10:25:31 AM IST : The variable \'placeOrderButton\' is null. Cannot perform click action.\n02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke \'org.openqa.selenium.WebElement.click()\' because \'placeOrderButton\' is null\n02-Sep-2025 10:25:32 AM IST : Test failed due to Null Pointer Exception.\n\n02-Sep-2025 10:25:31 AM IST : Clicking on \'Place your order\' button\n02-Sep-2025 10:25:31 AM IST : The variable \'placeOrderButton\' is null. Cannot perform click action.\n02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke \'org.openqa.selenium.WebElement.click()\' because \'placeOrderButton\' is null\n02-Sep-2025 10:25:32 AM IST : Test failed due to Null Pointer Exception.\n\n\n02-Sep-2025 10:25:31 AM IST : Clicking on \'Place your order\' button\n02-Sep-2025 10:25:31 AM IST : The variable \'placeOrderButton\' is null. Cannot perform click action.\n02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke \'org.openqa.selenium.WebElement.click()\' because \'placeOrderButton\' is null\n02-Sep-2025 10:25:32 AM IST : Test failed due to Null Pointer Exception.\n\n\n02-Sep-2025 10:25:31 AM IST : Clicking on \'Place your order\' button\n02-Sep-2025 10:25:31 AM IST : The variable \'placeOrderButton\' is null. Cannot perform click action.\n02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke \'org.openqa.selenium.WebElement.click()\' because \'placeOrderButton\' is null\n02-Sep-2025 10:25:32 AM IST : Test failed due to Null Pointer Exception.\n\n\n02-Sep-2025 10:25:31 AM IST : Clicking on \'Place your order\' button\n02-Sep-2025 10:25:31 AM IST : The variable \'placeOrderButton\' is null. Cannot perform click action.\n02-Sep-2025 10:25:31 AM IST : java.lang.NullPointerException: Cannot invoke \'org.openqa.selenium.WebElement.click()\' because \'placeOrderButton\' is null\n02-Sep-2025 10:25:32 AM IST : Test failed due to Null Pointer Exception.\n\n\n')">View</button></td></tr><tr><td class='px-4 py-2'>4</td><td class='px-4 py-2 font-medium text-blue-700'>verifyOrderConfirmationPage</td><td class='px-4 py-2 text-red-600'>02-Sep-2025 10:25:40 AM IST : org.openqa.selenium.ElementNotVisibleException: element not visible</td><td class='px-4 py-2'><button class='bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition pop' onclick="showModal('verifyOrderConfirmationPage', '***********************************Invoking Business Component : verifyOrderConfirmationPage***********************************\n02-Sep-2025 10:25:33 AM IST : Verifying order confirmation page title\n02-Sep-2025 10:25:33 AM IST : Waiting for element to be visible: By.xpath: //h4[contains(text(),\'Order placed\')]\n02-Sep-2025 10:25:40 AM IST : Element is not visible on the page.\n02-Sep-2025 10:25:40 AM IST : org.openqa.selenium.ElementNotVisibleException: element not visible\n  (Session info: chrome=138.0.7204.169)\n02-Sep-2025 10:25:40 AM IST : Test failed due to Element Not Visible Exception.\n\n')">View</button></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="logModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden fade-in px-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg w-full max-w-3xl overflow-y-auto min-h-[40vh] max-h-[100vh] pop flex flex-col">
+            <div class="flex justify-between items-start border-b px-6 py-4 bg-purple-600 dark:bg-purple-900 rounded-t-lg">
+                <h2 class="text-xl font-bold text-white leading-tight" id="modalKeywordName">Keyword Name</h2>
+                <button onclick="closeModal()" class="text-white text-2xl font-bold ml-4 flex-shrink-0" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="px-6 py-4 overflow-y-auto">
+                <h3 class="font-semibold mb-2 text-purple-700 dark:text-purple-400">Failure Logs</h3>
+                <pre id="modalLogContent" class="bg-gray-100 dark:bg-gray-900 p-4 rounded text-sm whitespace-pre-wrap max-h-[60vh] overflow-y-auto"></pre>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            const ctx = document.getElementById('failureChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Passed', 'Failed'],
+                    datasets: [{
+                        data: [17,4],
+                        backgroundColor: ['#22c55e', '#ef4444'],
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { color: 'rgb(156, 163, 175)' } }
+                    },
+                    cutout: "70%"
+                }
+            });
+        };
+        function showModal(keyword, log) {
+            document.getElementById('modalKeywordName').innerText = keyword;
+            document.getElementById('modalLogContent').innerText = log.replace(/\\n/g, '\n');
+            document.getElementById('logModal').classList.remove('hidden');
+        }
+        function closeModal() {
+            document.getElementById('logModal').classList.add('hidden');
+        }
+        window.onclick = function(event) {
+            var modal = document.getElementById('logModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggleBtn = document.getElementById('themeToggleBtn');
+            const root = document.documentElement;
+            const savedTheme = localStorage.getItem('theme');
+
+            if (savedTheme === 'dark') {
+                root.classList.add('dark');
+                themeToggleBtn.textContent = 'Light Mode';
+            } else {
+                root.classList.remove('dark');
+                themeToggleBtn.textContent = 'Dark Mode';
+            }
+
+            themeToggleBtn.onclick = function () {
+                if (root.classList.contains('dark')) {
+                    root.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                    themeToggleBtn.textContent = 'Dark Mode';
+                } else {
+                    root.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                    themeToggleBtn.textContent = 'Light Mode';
+                }
+            };
+        });
+    </script>
+</body>
+</html>
